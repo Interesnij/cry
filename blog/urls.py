@@ -1,5 +1,5 @@
 from django.conf.urls import url
-from skill_posts.views import BlogPostsView
+from blog.views import BlogPostsView
 
 
 urlpatterns = [
