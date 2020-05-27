@@ -1,7 +1,7 @@
 from django.conf.urls import url
-from skill_categories.views import SkillCategoriesView
+from blog_categories.views import BlogCategoriesView
 
 
 urlpatterns = [
-    url(r'^$', SkillCategoriesView.as_view(), name='skill_categories'),
+    url(r'^$', BlogCategoriesView.as_view(), name='blog_categories'),
 ]
