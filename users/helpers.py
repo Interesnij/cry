@@ -2,7 +2,7 @@ import uuid
 from os.path import splitext
 
 
-def upload_to_user_cover_directory(user_profile, filename):
+def upload_to_user_directory(user_profile, filename):
     creator = user_profile.creator
     return _upload_to_user_directory(creator=creator, filename=filename)
 

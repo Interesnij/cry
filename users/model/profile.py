@@ -3,7 +3,7 @@ from django.db import models
 from django.conf import settings
 from pilkit.processors import ResizeToFill, ResizeToFit
 from imagekit.models import ProcessedImageField
-from ad_posts.helpers import upload_to_user_directory
+from users.helpers import upload_to_user_directory
 from django.utils import timezone
 
 
