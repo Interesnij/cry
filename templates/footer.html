@@ -1,0 +1,76 @@
+{% load staticfiles %}
+<footer class="footer">
+            <div class="wrapper">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <a href="#" class="brand">
+                                НАЗВАНИЕ
+                            </a>
+                            <p>
+                                Подавайте объявления на множество тем в любой локации Российской Федерации
+                            </p>
+                        </div>
+                        <div class="col-md-3">
+                            <h2>Разделы</h2>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6">
+                                    <nav>
+                                        <ul class="list-unstyled">
+                                            <li>
+                                                <a href="{% url 'main' %}">Главная</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Помощь</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Войти</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">О сайте</a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                                <div class="col-md-6 col-sm-6">
+                                    <nav>
+                                        <ul class="list-unstyled">
+                                            <li>
+                                                <a href="#">Мои товары</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Избранное</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Подписки</a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <h2>Контакты</h2>
+                            <address>
+                                <figure>
+                                    г.Москва<br>
+                                    ул.Мюнхаузена 1-111
+                                </figure>
+                                <br>
+                                <strong>Email:</strong> <a href="#">hello@example.com</a>
+                                <br>
+                                <strong>Тел: </strong> 8904 237 36 37
+                                <br>
+                                <br>
+                                <a href="#" class="btn btn-primary text-caps btn-framed">Связаться</a>
+                            </address>
+                        </div>
+                    </div>
+                </div>
+                <div class="background">
+                    <div class="background-image original-size">
+                        <img src="{% static 'images/footer-background-icons.jpg' %}" alt="">
+                    </div>
+                </div>
+            </div>
+      </footer>

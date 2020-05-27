@@ -1,0 +1,51 @@
+{% extends "bases/anon_base.html" %}
+{% load staticfiles %}
+{% block title %}Регистрации{% endblock %}
+{% block content %}
+
+<section class="content">
+    <section class="block">
+        <div class="container">
+            <div class="row justify-content-center">
+              <br><br><br>
+                <div class="col-md-4">
+                  <form class="form clearfix" name="register_post" id="signup">
+                      <div class="form-group">
+                          <label class="col-form-label required">Имя</label>
+                          <input type="text" name="first_name" id="id_first_name" placeholder="Имя">
+                      </div>
+                      <div class="form-group">
+                          <label class="col-form-label required">Фамилия</label>
+                          <input type="text" name="last_name" id="id_last_name" placeholder="Фамилия">
+                      </div>
+                      <div class="form-group">
+                          <label class="col-form-label required">Пароль</label>
+                          <input type="password" name="password1" id="password1" placeholder="Пароль">
+                      </div>
+                      <div class="form-group">
+                          <label class="col-form-label required">Повторите пароль</label>
+                          <input type="password" name="password2" id="password2" placeholder="Повторите пароль">
+                      </div>
+                      <div class="d-flex justify-content-between align-items-baseline">
+                          <label class="">
+                            <div class="icheckbox">
+                              <input type="checkbox"  id="register_" checked onchange="document.getElementById('register_ajax').disabled = !this.checked;" name="remember" value="1" style="position: absolute; opacity: 0;">
+                              <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+                            </div>
+                            Я принимаю <a href="">Правила сайта</a>.
+                          </label>
+                          <button type="button" id="register_ajax" class="btn btn-primary">Регистрация</button>
+                      </div>
+                  </form>
+                  <small class="reg-response"></small>
+                  <hr>
+                  <p>
+                      Есть аккаунт? <a href="{% url 'login' %}" class="link">Войти</a>
+                  </p>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+
+{% endblock %}

@@ -1,0 +1,103 @@
+{% extends "bases/anon_base.html" %}
+{% block title %}Модуль объявлений по всей России{% endblock %}
+{% block navigation %}
+<div class="header_navigation container">
+  <a class="get_russia" tooltip='Нажмите для смены локации' flow="down" href="#">Россия</a> /
+  <a>Модуль объявлений</a>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="page-title">
+    <div class="container">
+      <h1 class="opacity-40 center">
+        Россия :: модуль объявлений
+      </h1>
+    </div>
+</div>
+{% include 'main/ads/ad_form.html' %}
+
+<section class="content module_1">
+  <section class="block">
+      <div class="container">
+        <h2>Категории объявлений</h2>
+        <h4 class="row">
+          {% for cat in ad_categories %}
+              <span class="col-md-3">
+                <a href="{% url 'ad_category' cat_name=cat.name_en %}" class="ajax">
+                  {{ cat.name_ru }} ({{ cat.get_ads_count }})
+                </a>
+              </span>
+          {% endfor %}
+         </h4>
+      </div>
+  </section>
+
+  <section class="block">
+    <div class="container">
+        <div class="section-title clearfix">
+            <div class="float-xl-left float-md-left float-sm-none">
+                <h2>Россия :: Последние объявления</h2>
+            </div>
+        </div>
+        <div class="items masonry grid-xl-4-items grid-lg-3-items grid-md-2-items">
+          {% for object in last_ads %}
+              {% include 'generic/ads/anon_ad.html' %}
+            {% endfor %}
+        </div>
+    </div>
+  </section>
+
+    <section class="block" style="background: black;color: white;">
+        <div class="container">
+            <div class="block">
+                <h2>Система работы сайта достаточно проста</h2>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="feature-box">
+                            <figure>
+                                <img src="/static/images/feature-user.png" alt="">
+                                <span style="color: black;">1</span>
+                            </figure>
+                            <h3>Создаёте аккаунт</h3>
+                            <p>Покупатель свяжется с Вами напрямую, по указанным Вами контактам</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="feature-box">
+                            <figure>
+                                <img src="/static/images/feature-upload.png" alt="">
+                                <span style="color: black;">2</span>
+                            </figure>
+                            <h3>Добавляете объявление</h3>
+                            <p>Кнопка добавления находится сверху справа. Нужно быть зарегистрированным.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="feature-box">
+                            <figure>
+                                <img src="/static/images/feature-like.png" alt="">
+                                <span style="color: black;">3</span>
+                            </figure>
+                            <h3>Ждёте покупателя</h3>
+                            <p>Разумеется, будет здорово, если Вы расскажете о нас друзьям.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="feature-box">
+                            <figure>
+                                <img src="/static/images/feature-wallet.png" alt="">
+                                <span style="color: black;">4</span>
+                            </figure>
+                            <h3>Получаете оплату</h3>
+                            <p>Заходите на наш сайт еще, он рассчитан на большой трафик по России</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="background" data-background-color="#2b2b2b"></div>
+    </section>
+
+</section>
+{% endblock %}

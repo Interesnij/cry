@@ -1,0 +1,73 @@
+{% load staticfiles %}
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1, minimal-ui, shrink-to-fit=no, viewport-fit=cover">
+    <title>Подтверждение телефона</title>
+    <link type="text/css" media='all' href="{% static 'styles/bootstrap.min.css' %}" rel="stylesheet" />
+    <link type="text/css" media='all' href="{% static 'styles/style.css' %}" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="hero">
+    <div class="secondary-navigation">
+        <div class="container">
+          <div class="left" style="display:flex">
+            <a style="font-size:20px;color:white" href="{% url 'main' %}">
+              Модули
+            </a>
+          </div>
+        </div>
+    </div>
+  </div>
+<section class="content">
+    <section class="block">
+        <div class="container">
+            <div class="row justify-content-center">
+              <h1 class="font-weight-light mb-3 mt-4 content-color-secondary text-left">{{ request.user.get_full_name }}!</h1>
+              <p>Для авторизации Вашего профиля будет использоваться номер Вашего телефона. Для этого Вам нужно подтвердить
+                 его. Введите номер без кода страны (к примеру, для России это цифра "7") и нажмите кнопку "Получить код".
+                 Мы Вам перезвоним, и последние 4 цифры и будут кодом подтверждения Вашего номера.</p>
+              <div class="row">
+                  <div class="col-md-2"></div>
+                  <div class="col-md-5 col-offset-1" style="display: inline-flex;margin-top: 12px;margin-bottom: 12px;">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" style="font-size: 18px;">+{{ request.user.get_last_location.phone }}</span>
+                    </div>
+                    <input type="number" id="phone" onkeyup="phone_check();" class="form-control border-0" placeholder="Телефон">
+                    <hr class="my-0">
+                  </div>
+                  <div class="col-md-3" style="margin-top: 12px;">
+                    <button type="button" disabled="disabled" id="phone_send" class="btn btn-primary pink-gradient">Получить код</button>
+                  </div>
+                  <div class="col-md-2"></div>
+              </div>
+              <div id='jsondata' style="margin-top:50px"></div>
+
+              <div id='jsondata2' style="margin-top:50px"></div>
+
+  </div>
+</div>
+</section>
+</section>
+
+{% include "base_script.html" %}
+<script>
+function phone_check() {
+if (document.getElementById('phone').value.length > 9)
+  document.getElementById("phone_send").removeAttribute('disabled');
+else
+  document.getElementById("phone_send").setAttribute("disabled", "true");
+}
+function code_check() {
+  if (document.getElementById('code').value.length === 4)
+    document.getElementById("code_send").removeAttribute('disabled');
+  else
+    document.getElementById("code_send").setAttribute("disabled", "true");
+}
+</script>
+ </body>
+ </html>

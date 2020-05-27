@@ -1,0 +1,42 @@
+{% if user != request.user %}
+
+<section>
+    <h2>Написать отзыв</h2>
+
+    <form class="form" action="" id="guestttt" method="post">
+      {% csrf_token %}
+      {{ form.non_field_errors }}
+        <div class="row">
+            <div class="col-md-8">
+                <div class="form-group">
+                    {{ form.title.errors }}
+                    <label for="subject" class="col-form-label">Заголовок</label>
+                    {{ form.title }}
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    {{ form.star.error_messages }}
+                    {{ form.star.help_text }}
+                    <label for="rating" class="col-form-label">Оценка пользователя</label>
+                    {{ form.star }}
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="form-group">
+                  {{ form.message.errors }}
+                    <label for="review" class="col-form-label">Содержимое</label>
+                  {{ form.message }}
+                </div>
+            </div>
+        </div>
+        <section class="clearfix">
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary large icon float-right">Опубликовать<i class="fa fa-chevron-right"></i></button>
+            </div>
+        </section>
+    </form>
+</section>
+{% endif %}

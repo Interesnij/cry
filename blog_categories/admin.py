@@ -1,3 +1,4 @@
 from django.contrib import admin
+from skill_categories.models import BlogCategory
 
-# Register your models here.
+admin.site.register(BlogCategory)

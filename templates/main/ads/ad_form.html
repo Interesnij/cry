@@ -1,0 +1,74 @@
+
+<form class="hero-form form module_1">
+    <div class="container">
+        <div class="main-search-form">
+            <div class="form-row">
+              <div class="col-md-3 col-sm-3">
+                  <div class="form-group">
+                      <label style="margin-top:0px;" class="col-form-label">Название</label>
+                      <input id="id_title" name="title" value="{{ title }}" type="text" class="form-control" placeholder="Название объявления">
+                  </div>
+              </div>
+                <div class="col-md-3 col-sm-3">
+                    <div class="form-group">
+                        <label style="margin-top:0px;" class="col-form-label">Локация</label>
+                        <input class="get_russia" type="text" style="cursor:pointer" readonly value="Россия">
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3">
+                    <div class="form-group">
+                        <label style="margin-top:0px;" class="col-form-label">Категория</label>
+                        <select onchange="SelectSubCategory (this)" name="category" id="id_category">
+                            <option style="margin-top:18px;" value="">Категория</option>
+                            {% for object in ad_categories %}
+                              <option value="{{ object.pk }}">{{ object.name_ru }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3">
+                    <button type="submit" class="btn btn-primary width-100">Поиск</button>
+                </div>
+            </div>
+        </div>
+        <div class="alternative-search-form">
+            <a href="#" class="icon collapsed more_search_fields"><i class="fa fa-plus"></i>Еще фильтры</a>
+            <div class="collapse">
+                <div class="wrapper">
+                    <div class="form-row">
+                        <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 d-xs-grid d-flex align-items-center justify-content-between">
+                            <label>
+                                <div class="icheckbox"><input type="checkbox" name="with_photo" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                С фото
+                            </label>
+                            <div class="col-md-7">
+                              <div class="subcat" style="display:none">
+                                <select style="padding: 1.4rem;margin-bottom: 1.4rem;" name="category" id="id_category">
+
+                                </select>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12">
+                            <div class="form-row">
+
+                                <div class="col-md-4 col-sm-4">
+                                    <div class="form-group">
+                                        <input name="min_price" type="text" class="form-control small" id="min-price" placeholder="Мин цена">
+                                        <span class="input-group-addon small">руб</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-4">
+                                    <div class="form-group">
+                                        <input name="max_price" type="text" class="form-control small" id="max-price" placeholder="Макс цена">
+                                        <span class="input-group-addon small">руб</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

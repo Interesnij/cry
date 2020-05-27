@@ -1,0 +1,71 @@
+{% extends "bases/base.html" %}
+{% block title %}Многопрофильный сайт по всей России{% endblock %}
+{% block navigation %}
+<div class="header_navigation container">
+  <a class="get_russia" tooltip='Нажмите для смены локации' flow="down" href="#">Россия</a>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="page-title">
+    <div class="container">
+      <h1 class="opacity-40 center">
+        <span class="module_1">
+        <a href="{% url 'ads_main' %}" class="ajax">Продавайте</a></span>,
+        <span class="skill_content"><a href="{% url 'courses_main' %}" class="ajax">Обучайтесь</a></span>
+        и
+        <span class="love_content"><a href="{% url 'ankets_main' %}" class="ajax">Знакомьтесь</a></span>
+        по всей России
+      </h1>
+    </div>
+</div>
+
+<section class="content">
+
+  <section class="block module_1">
+    <div class="container">
+        <div class="section-title clearfix">
+          <div class="float-xl-left float-md-left float-sm-none">
+            <h2><a href="{% url 'ads_main' %}" class="ajax">Россия :: Последние объявления</a></h2>
+          </div>
+        </div>
+        <div class="items masonry grid-xl-4-items grid-lg-3-items grid-md-2-items">
+          {% for object in last_ads %}
+            {% include 'generic/ads/loc_ad.html' %}
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+    <section class="block skill_content">
+      <div class="container">
+          <div class="section-title clearfix">
+            <div class="float-xl-left float-md-left float-sm-none">
+              <h2><a href="{% url 'courses_main' %}" class="ajax">Россия :: Последние курсы</a></h2>
+            </div>
+          </div>
+          <div class="items masonry grid-xl-4-items grid-lg-3-items grid-md-2-items">
+            {% for object in last_courses %}
+              {% include 'generic/skills/loc_skill.html' %}
+            {% endfor %}
+          </div>
+        </div>
+    </section>
+
+    <section class="block love_content">
+      <div class="container">
+        <div class="section-title clearfix">
+            <div class="float-xl-left float-md-left float-sm-none">
+              <h2><a href="{% url 'ankets_main' %}" class="ajax">Россия :: Последние анкеты</a></h2>
+            </div>
+        </div>
+        <div class="items masonry grid-xl-4-items grid-lg-3-items grid-md-2-items">
+          {% for object in last_ankets %}
+            {% include 'generic/ankets/loc_anketa.html' %}
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+</section>
+{% endblock %}

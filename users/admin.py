@@ -1,3 +1,29 @@
 from django.contrib import admin
+from users.model.profile import (
+                                    UserProfile,
+                                    IPUser,
+                                    OneUserLocation,
+                                    TwoUserLocation,
+                                    ThreeUserLocation,
+                                )
+from users.model.list import Subscribe, Guest, UserBlock
+from django.conf import settings
+from users.models import User
 
-# Register your models here.
+
+admin.site.register(User)
+
+admin.site.register(UserProfile)
+admin.site.register(IPUser)
+admin.site.register(OneUserLocation)
+admin.site.register(TwoUserLocation)
+admin.site.register(ThreeUserLocation)
+
+admin.site.register(UserAdStaff)
+admin.site.register(UserSkillStaff)
+admin.site.register(UserAnketaStaff)
+admin.site.register(UserStaff)
+
+admin.site.register(Subscribe)
+admin.site.register(Guest)
+admin.site.register(UserBlock)

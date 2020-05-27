@@ -1,0 +1,72 @@
+
+<form class="hero-form form love_content">
+    <div class="container">
+        <div class="main-search-form">
+            <div class="form-row">
+              <div class="col-md-3 col-sm-3">
+                  <div class="form-group">
+                      <label style="margin-top:0px;" class="col-form-label">Тип отношений</label>
+                      <input id="id_title" name="title" value="{{ title }}" type="text" class="form-control" placeholder="Тип отношений">
+                  </div>
+              </div>
+                <div class="col-md-3 col-sm-3">
+                    <div class="form-group">
+                        <label style="margin-top:0px;" class="col-form-label">Локация</label>
+                        <input class="get_russia" type="text" style="cursor:pointer" readonly value="Россия">
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3">
+                    <div class="form-group">
+                        <label style="margin-top:0px;" class="col-form-label">Возраст</label>
+                        <select onchange="SelectSubCategory (this)" name="category" id="id_category">
+                            <option style="margin-top:18px;" value="">Возраст</option>
+                              <option value="1">18-25 лет</option>
+                              <option value="2">26-35 лет</option>
+                              <option value="3">36-45 лет</option>
+                              <option value="4">46-55 лет</option>
+                              <option value="5">56-65 лет</option>
+                              <option value="6">66-500 лет</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3">
+                    <button type="submit" class="btn btn-love width-100">Поиск</button>
+                </div>
+            </div>
+        </div>
+        <div class="alternative-search-form">
+            <a href="#" class="icon collapsed more_search_fields"><i class="fa fa-plus"></i>Еще фильтры</a>
+            <div class="collapse">
+                <div class="wrapper">
+                    <div class="form-row">
+                        <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 d-xs-grid d-flex align-items-center justify-content-between">
+                          <label>
+                              <div class="icheckbox"><input type="checkbox" name="with_photo" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                              С фото
+                          </label>
+                        </div>
+                        <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12">
+                            <div class="form-row">
+
+                                <div class="col-md-4 col-sm-4">
+                                    <div class="form-group">
+                                      <select style="padding: 1.4rem;margin-bottom: 1.4rem;" name="worldview" id="id_worldview">
+                                        <option value="0">Мировоззрение</option>
+                                      </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-4">
+                                    <div class="form-group">
+                                      <select style="padding: 1.4rem;margin-bottom: 1.4rem;" name="mainthing_in_people" id="id_mainthing_in_people">
+                                        <option value="0">Главное в людях</option>
+                                      </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
