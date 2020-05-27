@@ -19,11 +19,6 @@ admin.site.register(OneUserLocation)
 admin.site.register(TwoUserLocation)
 admin.site.register(ThreeUserLocation)
 
-admin.site.register(UserAdStaff)
-admin.site.register(UserSkillStaff)
-admin.site.register(UserAnketaStaff)
-admin.site.register(UserStaff)
-
 admin.site.register(Subscribe)
 admin.site.register(Guest)
 admin.site.register(UserBlock)
