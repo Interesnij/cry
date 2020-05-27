@@ -1,6 +1,5 @@
 from django.db import models
 from django.db.models import Q
-from skill_posts.models import Course
 
 
 class BlogCategory(models.Model):
