@@ -27,7 +27,7 @@
               {% for object in blog_categories %}
               {% url 'blog_index' pk=object.pk as blog_index %}
               <li {% if blog_index == current_url %}class="active"{% endif %}>
-                <a href="{% url 'blog_index' pk=object.pk %}">{{ object.name }}</a>
+                <a href="{% url 'blog_index' cat_name=object.name_en %}">{{ object.name_ru }}</a>
               </li>
               {% endfor %}
             </ul>

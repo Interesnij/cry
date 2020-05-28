@@ -16,10 +16,10 @@ class BlogListView(ListView, CategoryListMixin):
 	tag = ""
 
 	def get(self,request,*args,**kwargs):
-		if self.kwargs["pk"] == None:
+		if self.kwargs["cat_name"] == None:
 			self.cat = BlogCategory.objects.first()
 		else:
-			self.cat = BlogCategory.objects.get(pk=self.kwargs["pk"])
+			self.cat = BlogCategory.objects.get(name_en=self.kwargs["cat_name"])
 		return super(BlogListView,self).get(request,*args,**kwargs)
 
 	def get_queryset(self):
