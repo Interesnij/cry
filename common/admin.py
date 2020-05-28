@@ -3,7 +3,7 @@ from common.model.votes import BlogVotes
 from common.model.other import PhoneCodes
 
 
-class AdVotesAdmin(admin.ModelAdmin):
+class BlogVotesAdmin(admin.ModelAdmin):
     list_display = (
         'vote',
         'user',
