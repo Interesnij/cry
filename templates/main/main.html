@@ -1,71 +1,305 @@
 {% extends "bases/base.html" %}
-{% block title %}Многопрофильный сайт по всей России{% endblock %}
-{% block navigation %}
-<div class="header_navigation container">
-  <a class="get_russia" tooltip='Нажмите для смены локации' flow="down" href="#">Россия</a>
-</div>
-{% endblock %}
+{% block title %}Хомо нытикус как продукт инфантилизации{% endblock %}
 
 {% block content %}
-<div class="page-title">
-    <div class="container">
-      <h1 class="opacity-40 center">
-        <span class="module_1">
-        <a href="{% url 'ads_main' %}" class="ajax">Продавайте</a></span>,
-        <span class="skill_content"><a href="{% url 'courses_main' %}" class="ajax">Обучайтесь</a></span>
-        и
-        <span class="love_content"><a href="{% url 'ankets_main' %}" class="ajax">Знакомьтесь</a></span>
-        по всей России
-      </h1>
-    </div>
-</div>
+      <section class="slider-content">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-xs-12 no-padding">
+                  <div id="main-carousel" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                      <li data-target="#main-carousel" data-slide-to="0" class="active"></li>
+                      <li data-target="#main-carousel" data-slide-to="1"></li>
+                      <li data-target="#main-carousel" data-slide-to="2"></li>
+                    </ol>
 
-<section class="content">
-
-  <section class="block module_1">
-    <div class="container">
-        <div class="section-title clearfix">
-          <div class="float-xl-left float-md-left float-sm-none">
-            <h2><a href="{% url 'ads_main' %}" class="ajax">Россия :: Последние объявления</a></h2>
-          </div>
-        </div>
-        <div class="items masonry grid-xl-4-items grid-lg-3-items grid-md-2-items">
-          {% for object in last_ads %}
-            {% include 'generic/ads/loc_ad.html' %}
-          {% endfor %}
-        </div>
-      </div>
-    </section>
-
-    <section class="block skill_content">
-      <div class="container">
-          <div class="section-title clearfix">
-            <div class="float-xl-left float-md-left float-sm-none">
-              <h2><a href="{% url 'courses_main' %}" class="ajax">Россия :: Последние курсы</a></h2>
+                    <div class="carousel-inner" role="listbox">
+                      <div class="item active">
+                        <div class="carousel-caption">
+                          <span class="caption-head" data-animation="animated bounceInLeft"><span class="text-success">HTML5</span> & <span class="text-primary">Wordpress</span> versions</span>
+                          <p class="text-center" data-animation="animated bounceInRight">are now ready for download.</p>
+                          <a class="btn btn-primary btn-lg" data-animation="animated zoomInUp" href="#">Get it now</a>
+                        </div>
+                      </div>
+                      <div class="item">
+                        <div class="carousel-caption">
+                          <span class="caption-head" data-animation="animated bounceInDown">A <span class="text-success">Joomla</span> version</span><br/>
+                          <p class="text-center"  data-animation="animated bounceInUp">will be available soon</p>
+                          <a class="btn btn-success btn-lg" data-animation="animated zoomInRight" href="#">Stay focus</a>
+                        </div>
+                      </div>
+                      <div class="item">
+                        <div class="carousel-caption">
+                          <span class="caption-head" data-animation="animated zoomInLeft" >Blog, Design & <span class="text-danger">Fun</span></span><br/>
+                          <p class="text-center" data-animation="animated flipInX">Lorem ipsum dolor sit amet, consectetur adipisicing elit et dolore magna aliqua.</p>
+                          <a class="btn btn-danger btn-lg" data-animation="animated lightSpeedIn" href="#">Continue reading</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="slider-inner">
+                      <div class="boxed">
+                        <h1 class="text-primary wow fadeInDown text-uppercase"  data-wow-duration="1.8s" data-wow-delay=".2s">Fallone</h1>
+                        <span class="line-sep-green"></span>
+                        <h3 class="text-white text-uppercase wow fadeInUp"  data-wow-duration="1s" data-wow-delay=".3s">
+                          Awesome website theme based on <span class="text-success">Bootstrap</span> v.3.3.5.
+                        </h3>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="items masonry grid-xl-4-items grid-lg-3-items grid-md-2-items">
-            {% for object in last_courses %}
-              {% include 'generic/skills/loc_skill.html' %}
-            {% endfor %}
+        </div>
+      </section>
+
+      <section class="blue cut-ccw02">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-sm-6 col-xs-12">
+                  <h2 class="uppercase wow fadeInDown"  data-wow-duration=".8s" data-wow-delay=".2s">Great Designers</h2>
+                  <span class="line-sep-blue"></span>
+                  <p class="wow fadeInUp"  data-wow-duration="1s" data-wow-delay=".3s">
+                    Curabitur pretium tincidunt lacus. Nulla gravida orci a odio.
+                    Nullam varius, turpis et commodo pharetra, est eros bibendum elit,
+                    nec luctus magna felis sollicitudin mauris. Integer in mauris eu
+                    nibh euismod gravida. Duis ac tellus et risus vulputate vehicula.
+                    Donec lobortis risus a elit. Etiam tempor. Ut ullamcorper,
+                    ligula eu tempor congue, eros est euismod turpis,
+                    id tincidunt sapien risus a quam. Maecenas fermentum consequat mi.
+                    Donec fermentum. Pellentesque malesuada nulla a mi.
+                  </p>
+                </div>
+                <div class="col-sm-6 col-xs-12">
+
+                  <div class="thumbnail mar-auto wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">
+                    <figure>
+                      <img src="/static/images/media/glass.jpg" class="img-responsive" alt="" />
+                      <div class="image-overlay">
+                        <p>
+                          <a href="/static/images/media/glass.jpg" class="show-image">
+                            <i class="iline2-arrows55"></i>
+                          </a>
+                        </p>
+                      </div>
+                    </figure>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-    </section>
+      </section>
 
-    <section class="block love_content">
-      <div class="container">
-        <div class="section-title clearfix">
-            <div class="float-xl-left float-md-left float-sm-none">
-              <h2><a href="{% url 'ankets_main' %}" class="ajax">Россия :: Последние анкеты</a></h2>
+      <section class="pattern-3">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="panel-group panel-accordion" id="accordion" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-default">
+                      <div class="panel-heading" role="tab" id="headingOne">
+                        <div  class="side-tab" data-target="#tab1" data-toggle="tab" role="tab" aria-expanded="false">
+                          <h4 class="panel-title">
+                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                              Lamp Design #1
+                            </a>
+                          </h4>
+                        </div>
+                        <i class="icon iline2-arrow407"></i>
+                      </div>
+                      <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                        <p class="panel-body no-margin-bottom">
+                          Curabitur pretium tincidunt lacus. Nulla gravida orci a odio.
+                          Nullam varius, turpis et commodo pharetra, est eros bibendum elit,
+                          nec luctus magna felis sollicitudin mauris. Integer in mauris eu
+                          nibh euismod gravida. Duis ac tellus et risus vulputate.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div class="panel panel-default">
+                      <div class="panel-heading" role="tab" id="headingTwo">
+                        <div  class="side-tab" data-target="#tab2" data-toggle="tab" role="tab" aria-expanded="false">
+                          <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                              Lamp Design #2
+                            </a>
+                          </h4>
+                        </div>
+                        <i class="icon iline2-arrow407"></i>
+                      </div>
+                      <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                        <p class="panel-body no-margin-bottom">
+                          Curabitur pretium tincidunt lacus. Nulla gravida orci a odio.
+                          Nullam varius, turpis et commodo pharetra, est eros bibendum elit,
+                          nec luctus magna felis sollicitudin mauris. Integer in mauris eu
+                          nibh euismod gravida. Duis ac tellus et risus vulputate.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div class="panel panel-default">
+                      <div class="panel-heading" role="tab" id="headingThree">
+                        <div  class="side-tab" data-target="#tab3" data-toggle="tab" role="tab" aria-expanded="false">
+                          <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                              Lamp Design #3
+                            </a>
+                          </h4>
+                        </div>
+                        <i class="icon iline2-arrow407"></i>
+                      </div>
+                      <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                        <p class="panel-body no-margin-bottom">
+                          Curabitur pretium tincidunt lacus. Nulla gravida orci a odio.
+                          Nullam varius, turpis et commodo pharetra, est eros bibendum elit,
+                          nec luctus magna felis sollicitudin mauris. Integer in mauris eu
+                          nibh euismod gravida. Duis ac tellus et risus vulputate.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 hidden-xs">
+                  <div class="md-notebook md-glare">
+                    <div class="md-lid">
+                      <div class="md-camera"></div>
+                      <div class="md-screen">
+                        <div class="tab-featured-image">
+                          <div class="tab-content">
+                            <div class="tab-pane  in active" id="tab1">
+                              <img src="/static/images/media/light-2.jpg" alt="" class="img img-responsive" />
+                            </div>
+                            <div class="tab-pane " id="tab2">
+                              <img src="/static/images/media/light-3.jpg" alt="" class="img img-responsive" />
+                            </div>
+                            <div class="tab-pane fade" id="tab3">
+                              <img src="/static/images/media/light.jpg" alt="" class="img img-responsive" />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="md-base"></div>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
-        <div class="items masonry grid-xl-4-items grid-lg-3-items grid-md-2-items">
-          {% for object in last_ankets %}
-            {% include 'generic/ankets/loc_anketa.html' %}
-          {% endfor %}
-        </div>
-      </div>
-    </section>
+      </section>
 
-</section>
+      <section class="white">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-6 mar-bottom-md">
+                  <span class="icon blue-icon iline2-codings1"></span>
+                  <h2 class="wow fadeInDown text-uppercase"  data-wow-duration=".8s" data-wow-delay=".2s">Commented Code</h2>
+                  <span class="line-sep-gray"></span>
+                  <p class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit
+                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                    occaecat cupidatat non proident, sunt in culpa qui officia
+                    deserunt mollit anim id est laborum.
+                  </p>
+                </div>
+                <div class="col-md-6 mar-bottom-md">
+                  <span class="icon green-icon iline2-tablet42"></span>
+                  <h2 class="wow fadeInDown text-uppercase"  data-wow-duration=".8s" data-wow-delay=".2s">Fully responsive</h2>
+                  <span class="line-sep-gray"></span>
+                  <p class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit
+                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                    occaecat cupidatat non proident, sunt in culpa qui officia
+                    deserunt mollit anim id est laborum.
+                  </p>
+                </div>
+                <div class="col-md-6 mar-bottom-md">
+                  <span class="icon blue-icon iline2-newspaper7"></span>
+                  <h2 class="wow fadeInDown text-uppercase"  data-wow-duration=".8s" data-wow-delay=".2s">Blog post</h2>
+                  <span class="line-sep-gray"></span>
+                  <p class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit
+                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                    occaecat cupidatat non proident, sunt in culpa qui officia
+                    deserunt mollit anim id est laborum.
+                  </p>
+                </div>
+                <div class="col-md-6 mar-bottom-md">
+                  <span class="icon blue-icon iline2-dollar77"></span>
+                  <h2 class="wow fadeInDown text-uppercase"  data-wow-duration=".8s" data-wow-delay=".2s">Low prices</h2>
+                  <span class="line-sep-gray"></span>
+                  <p class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit
+                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                    occaecat cupidatat non proident, sunt in culpa qui officia
+                    deserunt mollit anim id est laborum.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="background-1">
+        <h2 class="hidden">700 icons included</h2>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="highlight green">
+                More than <br/>700 icons included.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="pattern-3">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-12">
+                  <h2 class="wow fadeInDown text-uppercase"  data-wow-duration=".8s" data-wow-delay=".2s">PORTFOLIO</h2>
+                  <span class="line-sep-gray"></span>
+                  <p class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit
+                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                    occaecat cupidatat non proident, sunt in culpa qui officia
+                    deserunt mollit anim id est laborum.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 {% endblock %}

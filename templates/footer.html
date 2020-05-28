@@ -1,76 +1,70 @@
 {% load staticfiles %}
-<footer class="footer">
-            <div class="wrapper">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-5">
-                            <a href="#" class="brand">
-                                НАЗВАНИЕ
-                            </a>
-                            <p>
-                                Подавайте объявления на множество тем в любой локации Российской Федерации
-                            </p>
-                        </div>
-                        <div class="col-md-3">
-                            <h2>Разделы</h2>
-                            <div class="row">
-                                <div class="col-md-6 col-sm-6">
-                                    <nav>
-                                        <ul class="list-unstyled">
-                                            <li>
-                                                <a href="{% url 'main' %}">Главная</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Помощь</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Войти</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">О сайте</a>
-                                            </li>
-                                        </ul>
-                                    </nav>
-                                </div>
-                                <div class="col-md-6 col-sm-6">
-                                    <nav>
-                                        <ul class="list-unstyled">
-                                            <li>
-                                                <a href="#">Мои товары</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Избранное</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Подписки</a>
-                                            </li>
-                                        </ul>
-                                    </nav>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <h2>Контакты</h2>
-                            <address>
-                                <figure>
-                                    г.Москва<br>
-                                    ул.Мюнхаузена 1-111
-                                </figure>
-                                <br>
-                                <strong>Email:</strong> <a href="#">hello@example.com</a>
-                                <br>
-                                <strong>Тел: </strong> 8904 237 36 37
-                                <br>
-                                <br>
-                                <a href="#" class="btn btn-primary text-caps btn-framed">Связаться</a>
-                            </address>
-                        </div>
-                    </div>
+
+
+<footer class="page-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row">
+          <aside class="col-md-4 col-sm-6 col-xs-12 text-left">
+            <h3  class="uppercase">Newsletter</h3>
+            <span class="line-sep-gray"></span>
+            <p>
+              Subscribe to our weekly Newsletter and stay tuned
+              to all our updates.
+            </p>
+            <form action="#">
+              <div class="form-group">
+                <div class="input-group">
+                  <input type="email" class="form-control input-lg" placeholder="Your email address" id="mailchimp-email" name="EMAIL">
+                  <span class="input-group-btn">
+                    <button type="submit" class="btn   btn-lg">
+                      <i class="iline2-paper41"></i> Signup
+                    </button>
+                  </span>
                 </div>
-                <div class="background">
-                    <div class="background-image original-size">
-                        <img src="{% static 'images/footer-background-icons.jpg' %}" alt="">
-                    </div>
-                </div>
-            </div>
-      </footer>
+              </div>
+              <label for="mailchimp-email" class="text-danger text-center mailchimp-label"></label>
+            </form>
+          </aside>
+          <aside class="col-md-4 col-sm-6 col-xs-12 text-left">
+            <h3  class="uppercase">Copyright</h3>
+            <span class="line-sep-gray"></span>
+            <p>
+              2014-2015 Appdevfolio All right reserved
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+              sed do eiusmod tempor incididunt ut labore et dolore magna
+              aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+              ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </p>
+          </aside>
+          <aside class="col-md-4 col-sm-6 col-xs-12">
+            <h3  class="uppercase">Visit Us</h3>
+            <span class="line-sep-gray"></span>
+            <address>
+              <strong>Appdevfolio</strong><br/>
+              Pariser Platz, App. 600<br/>
+              Berlin, GE 10117<br/>
+              (+49) 123-456-789<br/>
+              <a href="mailto:#">info@appdevfolio.com</a><br/>
+              <a href="mailto:#">support@appdevfolio.com</a><br/>
+              Monday / Friday<br>
+              09:00 - 13.00 / 14:00 - 18:00
+            </address>
+          </aside>
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center mar-top-sm">
+            <ul class="social">
+              <li><a href="#" class="icon-xl iline3-be"></a></li>
+              <li><a href="#" class="icon-xl iline3-facebook27"></a></li>
+              <li><a href="#" class="icon-xl iline3-instagram4"></a></li>
+              <li><a href="#" class="icon-xl iline3-twitter19"></a></li>
+              <li><a href="#" class="icon-xl iline3-vimeo11"></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
