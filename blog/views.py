@@ -10,33 +10,33 @@ class BlogPostsView(TemplateView, CategoryListMixin):
 
 
 class BlogListView(ListView, CategoryListMixin):
-	model = Blog
-	template_name = None
-	paginate_by = 20
-	tag = ""
+    model = Blog
+    template_name = None
+    paginate_by = 20
+    tag = ""
 
-	def get(self,request,*args,**kwargs):
+    def get(self,request,*args,**kwargs):
         from common.get_templates import get_template
-        
-		if self.kwargs["cat_name"] == None:
-			self.cat = BlogCategory.objects.first()
-		else:
-			self.cat = BlogCategory.objects.get(name_en=self.kwargs["cat_name"])
+
+        if self.kwargs["cat_name"] == None:
+            self.cat = BlogCategory.objects.first()
+        else:
+            self.cat = BlogCategory.objects.get(name_en=self.kwargs["cat_name"])
         self.template_name = get_template(folder="blog/", template="page.html", request=request)
-		return super(BlogListView,self).get(request,*args,**kwargs)
+        return super(BlogListView,self).get(request,*args,**kwargs)
 
-	def get_queryset(self):
-		blogs = self.cat.get_posts().order_by("-posted")
-		if self.tag:
-			blogs = Blog.objects.all()
-			blogs = blogs.filter(tags__name=self.tag)
-		return blogs
+    def get_queryset(self):
+        blogs = self.cat.get_posts().order_by("-created")
+        if self.tag:
+            blogs = Blog.objects.all()
+            blogs = blogs.filter(tags__name=self.tag)
+        return blogs
 
-	def get_context_data(self,**kwargs):
-		context = super(BlogListView,self).get_context_data(**kwargs)
-		context["category"] = self.cat
-		context["tag"] = self.tag
-		return context
+    def get_context_data(self,**kwargs):
+        context = super(BlogListView,self).get_context_data(**kwargs)
+        context["category"] = self.cat
+        context["tag"] = self.tag
+        return context
 
 
 class BlogDetailView(TemplateView):
