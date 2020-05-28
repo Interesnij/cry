@@ -49,7 +49,7 @@
                           <a href="{% url 'blog_detail' pk=object.pk %}">
                             {% if object.image %}
                               <img src="{{ object.image.url }}" alt="" class="img-responsive img-full" />
-                            {% endif %}
+                            {% else %}
                               <img src="/static/images/detail-0.jpg" alt="" class="img-responsive img-full" />
                             {% endif %}
                             <div class="image-overlay">
@@ -68,6 +68,8 @@
                         <a class="btn btn-primary text-uppercase" href="{% url 'blog_detail' pk=object.pk %}" role="button"> Читать</a>
                       </div>
                     </article>
+                    {% empty %}
+                    <h2>Постов пока нет...</h2>
                     {% endfor %}
                 </div>
 
@@ -93,7 +95,7 @@
                             <span class="post-img">
                               {% if object.image %}
                                 <img src="{{ object.image.url }}" alt="" class="img-responsive" />
-                              {% endif %}
+                              {% else %}
                                 <img src="/static/images/detail-0.jpg" alt="" class="img-responsive" />
                               {% endif %}
                             </span>
