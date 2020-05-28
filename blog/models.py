@@ -51,6 +51,9 @@ class Blog(models.Model):
         dislikes = BlogVotes.objects.filter(parent=self, vote__lt=0)
         return dislikes
 
+    def get_frendly_posts(self):
+        return Blog.objects.filter(category=self.category).exclude(pk=self.pk).order_by("-created")[0:5]
+
 
 class BlogFavourites(models.Model):
     course = models.ForeignKey(Blog, on_delete=models.CASCADE, verbose_name="Пост")

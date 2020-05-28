@@ -22,7 +22,7 @@ class BlogListView(ListView, CategoryListMixin):
             self.cat = BlogCategory.objects.first()
         else:
             self.cat = BlogCategory.objects.get(name_en=self.kwargs["cat_name"])
-        self.template_name = get_template(folder="blog/", template="page.html", request=request)
+        self.template_name = get_template(folder="blog/", template="list.html", request=request)
         return super(BlogListView,self).get(request,*args,**kwargs)
 
     def get_queryset(self):
