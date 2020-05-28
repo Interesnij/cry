@@ -16,7 +16,7 @@ class User(AbstractUser):
     phone = models.CharField(max_length=17, unique=True, blank=True, verbose_name='Телефон')
     is_deleted = models.BooleanField(default=False, verbose_name='Пользователь удален')
     is_blocked = models.BooleanField(default=False, verbose_name='Пользователь заблокирован')
-    USERNAME_FIELD = 'phone'
+    #USERNAME_FIELD = 'phone'
 
     class Meta:
         verbose_name = 'пользователь'
