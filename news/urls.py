@@ -1,5 +1,5 @@
 from django.conf.urls import url
-from about.views import NewsListView, NewsDetailView
+from news.views import NewsListView, NewsDetailView
 
 
 urlpatterns = [
