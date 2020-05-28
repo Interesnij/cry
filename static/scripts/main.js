@@ -4,7 +4,6 @@ fallone = {
     this.textAnimation();
     //Navigation
     this.expander();
-    this.runIsotope();
     this.runCarousel();
 
     this.formValidate();
