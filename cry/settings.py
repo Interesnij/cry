@@ -46,6 +46,7 @@ BASIC_APPS = [
     'news',
     'faq',
     'contacts',
+    'stst',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + BASIC_APPS
