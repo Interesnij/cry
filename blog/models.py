@@ -6,6 +6,7 @@ from pilkit.processors import ResizeToFill, ResizeToFit
 from imagekit.models import ProcessedImageField
 from users.helpers import upload_to_user_directory
 from django.contrib.postgres.indexes import BrinIndex
+from ckeditor_uploader.fields import RichTextUploadingField
 
 
 class Blog(models.Model):
@@ -36,18 +37,18 @@ class Blog(models.Model):
         verbose_name_plural = "посты"
 
     def all_visits_count(self):
-        from stst.models import CourseNumbers
+        from stst.models import BlogNumbers
 
-        return CourseNumbers.objects.filter(course=self.pk).values('pk').count()
+        return BlogNumbers.objects.filter(blog=self.pk).values('pk').count()
 
     def likes(self):
-        from common.model.votes import CourseVotes
-        likes = CourseVotes.objects.filter(parent=self, vote__gt=0)
+        from common.model.votes import BlogVotes
+        likes = BlogVotes.objects.filter(parent=self, vote__gt=0)
         return likes
 
     def dislikes(self):
-        from common.model.votes import CourseVotes
-        dislikes = CourseVotes.objects.filter(parent=self, vote__lt=0)
+        from common.model.votes import BlogVotes
+        dislikes = BlogVotes.objects.filter(parent=self, vote__lt=0)
         return dislikes
 
 
