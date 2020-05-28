@@ -47,9 +47,9 @@ class BlogDetailView(TemplateView):
 
         self.blog = Blog.objects.get(pk=self.kwargs["pk"])
         self.template_name = get_template(folder="blog/", template="detail.html", request=request)
-        return super(NewsDetailView,self).get(request,*args,**kwargs)
+        return super(BlogDetailView,self).get(request,*args,**kwargs)
 
     def get_context_data(self, **kwargs):
-        context = super(NewsDetailView, self).get_context_data(**kwargs)
+        context = super(BlogDetailView, self).get_context_data(**kwargs)
         context['blog'] = self.blog
         return context
