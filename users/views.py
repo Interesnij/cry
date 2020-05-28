@@ -1,9 +1,10 @@
 from django.views.generic.base import TemplateView
 from django.views.generic import ListView
 from users.models import User
+from generic.mixins import CategoryListMixin
 
 
-class ProfileUserView(TemplateView):
+class ProfileUserView(TemplateView, CategoryListMixin):
     template_name = None
 
     def get(self,request,*args,**kwargs):

@@ -16,7 +16,9 @@ class BlogCategory(models.Model):
 		verbose_name_plural = "Категории"
 		ordering = ['order']
 
-	def get_course(self):
-		ads_query = Q(category__category__id=self.id, creator__is_blocked=False, is_deleted=False, is_active=True)
-		ads = Course.objects.filter(ads_query)
-		return ads
+	def get_posts(self):
+		from blog.models import Blog
+		
+		posts_query = Q(category__id=self.id, creator__is_blocked=False, is_deleted=False, is_active=True)
+		posts = Blog.objects.filter(posts_query)
+		return posts

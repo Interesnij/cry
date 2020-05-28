@@ -52,14 +52,10 @@
 }
 *::selection {
   background: #1fa3ff;
-  /* WebKit/Blink Browsers */
-
   color: #ffffff;
 }
 *::-moz-selection {
   background: #1fa3ff;
-  /* Gecko Browsers */
-
   color: #ffffff;
 }
 body {

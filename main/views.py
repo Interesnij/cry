@@ -1,8 +1,9 @@
 from django.views.generic.base import TemplateView
 from blog_categories.models import BlogCategory
+from generic.mixins import CategoryListMixin
 
 
-class MainPageView(TemplateView):
+class MainPageView(TemplateView, CategoryListMixin):
 	template_name = None
 
 	def get(self,request,*args,**kwargs):
