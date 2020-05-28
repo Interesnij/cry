@@ -4,5 +4,5 @@ from blog.views import BlogPostsViewб BlogListView
 
 urlpatterns = [
     url(r'^$', BlogPostsView.as_view(), name='blog_posts'),
-    url(r'^(?P<pk>\d+)/$', BlogListView.as_view(), name="blog_index"),
+    url(r'^(?P<pk>\d+)/$', BlogListView.as_view(), name="blog_index")
 ]
