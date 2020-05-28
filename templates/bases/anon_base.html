@@ -8,52 +8,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1, minimal-ui, shrink-to-fit=no, viewport-fit=cover">
     <title>{% block title %}{% endblock %}</title>
     <link type="text/css" media='all' href="{% static 'styles/bootstrap.min.css' %}" rel="stylesheet" />
+    <link type="text/css" media='all' href="{% static 'styles/normalize.css' %}" rel="stylesheet" />
+    <link type="text/css" media='all' href="{% static 'styles/animate.css' %}" rel="stylesheet" />
     <link type="text/css" media='all' href="{% static 'styles/style.css' %}" rel="stylesheet" />
+    <link type="text/css" media='all' href="{% static 'styles/responsive.css' %}" rel="stylesheet" />
+    <link type="text/css" media="none" onload="if(media!='all')media='all'" href="{% static 'styles/iline-icons.css' %}" rel="stylesheet" />
 </head>
 
 <body>
-{% block navigation %}{% endblock %}
-  <div class="hero">
-          <div class="secondary-navigation">
-            <div class="container">
-              <div class="left" style="display:flex">
-                <a style="font-size:20px;color:white" href="{% url 'main' %}" class="ajax">
-                  Модули
-                </a>
-              </div>
-              <div class="right dropdown" style="padding-right:10px;font-size:20px;padding-top:8px;">
-                <span>Привет, гость!</span>
-                <img src="{% static 'images/anonim.jpg' %}" style="border-radius:50%;width:30px;height:30px;margin-bottom:3px;">
-                <div class="dropdown-menu">
-                    <a href="{% url 'login' %}" class="dropdown-item">Вход</a>
-                    <a href="{% url 'signup' %}" class="dropdown-item">Регистрация</a>
-                    <a href="{% url 'main' %}" class="dropdown-item ajax">О сайте</a>
-                    <a href="{% url 'faq' %}" class="dropdown-item ajax">Вопросы-ответы</a>
-                </div>
-              </div>
-          </div>
-        </div>
-  </div>
-
-  <div id="ajax">
-    <span id="reload_block">
-      {% block content %}
-      {% endblock %}
-    </span>
+  {% include "navbar.html" %}
+  <div class="main-content">
+    <div id="ajax">
+      <span id="reload_block">
+        {% block content %}
+        {% endblock %}
+      </span>
+    </div>
    </div>
 
   {% include "footer.html" %}
-
+  <div id="back-to-top" class="back-to-top">
+    <a href="#" class="icon iline2-thin16 no-margin"></a>
+  </div>
   {% include "base_script.html" %}
 
-  <div class="card russia_fullscreen" style="display:none">
-    <span class="russia_fullscreen_hide">
-      <svg class="svg_default" style="width:30px;height:30px;border: 1px black solid;border-radius:50px" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
-        <path d="M0 0h24v24H0z" fill="none"/>
-      </svg>
-    </span>
-    <div id="russia_loader" style="margin-top:30px;position:relative;">абырвалг</div>
-  </div>
 </body>
 </html>
