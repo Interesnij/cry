@@ -11,15 +11,18 @@ class BlogPostsView(TemplateView, CategoryListMixin):
 
 class BlogListView(ListView, CategoryListMixin):
 	model = Blog
-	template_name = "blog_index.html"
+	template_name = None
 	paginate_by = 20
 	tag = ""
 
 	def get(self,request,*args,**kwargs):
+        from common.get_templates import get_template
+        
 		if self.kwargs["cat_name"] == None:
 			self.cat = BlogCategory.objects.first()
 		else:
 			self.cat = BlogCategory.objects.get(name_en=self.kwargs["cat_name"])
+        self.template_name = get_template(folder="blog/", template="page.html", request=request)
 		return super(BlogListView,self).get(request,*args,**kwargs)
 
 	def get_queryset(self):
@@ -34,3 +37,19 @@ class BlogListView(ListView, CategoryListMixin):
 		context["category"] = self.cat
 		context["tag"] = self.tag
 		return context
+
+
+class BlogDetailView(TemplateView):
+    template_name = None
+
+    def get(self,request,*args,**kwargs):
+        from common.get_templates import get_template
+
+        self.blog = Blog.objects.get(pk=self.kwargs["pk"])
+        self.template_name = get_template(folder="blog/", template="detail.html", request=request)
+        return super(NewsDetailView,self).get(request,*args,**kwargs)
+
+    def get_context_data(self, **kwargs):
+        context = super(NewsDetailView, self).get_context_data(**kwargs)
+        context['blog'] = self.blog
+        return context

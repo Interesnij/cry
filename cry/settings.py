@@ -43,6 +43,9 @@ BASIC_APPS = [
     'blog_categories',
     'blog',
     'common',
+    'news',
+    'faq',
+    'contacts',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + BASIC_APPS

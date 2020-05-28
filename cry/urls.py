@@ -17,6 +17,9 @@ urlpatterns = [
     url(r'^blog_categories/', include('blog_categories.urls')),
     url(r'^blog/', include('blog.urls')),
     url(r'^terms/', include('terms.urls')),
+    url(r'^news/', include('news.urls')),
+    url(r'^faq/', include('faq.urls')),
+    url(r'^contacts/', include('contacts.urls')),
 
     url(r'^logout/$', auth_views.LogoutView.as_view(template_name="account/logout.html"), name='logout'),
     url(r'^signup/$', TemplateView.as_view(template_name="account/signup.html"), name='signup'),
